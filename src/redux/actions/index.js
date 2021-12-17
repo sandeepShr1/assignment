@@ -1,3 +1,0 @@
-export {
-    fetchProducts
-} from './burgerBuilder';

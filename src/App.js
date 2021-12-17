@@ -3,15 +3,14 @@ import {
   Routes, // instead of "Switch"
   Route,
 } from "react-router-dom";
-import About from "./components/About";
-import Navbar from './components/navbar/Navbar'
+import Navbar from './components/Navbar'
 import LoadingBar from 'react-top-loading-bar'
 import React, { useState } from "react";
-import Products from "./components/products/Products";
-import Cart from "./components/products/Cart";
 import Alert from './container/Alert';
 
 import { CartProvider } from 'react-use-cart';
+import ProductListing from "./components/ProductListing";
+import NotFound from './container/NotFound';
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -41,9 +40,7 @@ function App() {
       />
       <CartProvider >
         <Routes>
-          <Route exact path="/" element={<Products setProgress={setProgress} showAlert={showAlert} />} />
-          <Route exact path="/about" element={<About setProgress={setProgress} showAlert={showAlert} />} />
-          <Route exact path="/cart" element={<Cart setProgress={setProgress} showAlert={showAlert} />} />
+          <Route exact path="/" element={<ProductListing setProgress={setProgress} showAlert={showAlert} />} />          <Route path='*' element={<NotFound />} />
         </Routes>
       </CartProvider>
     </BrowserRouter>

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Checkout = () => {
+const Navbar = () => {
     return (
         <div>
-            
+            nav
         </div>
     )
 }
 
-export default Checkout
+export default Navbar
