@@ -11,8 +11,12 @@ const Filter = () => {
     const dispatch = useDispatch();
 
     return (
-        <div>
-            <div className="filter-sort">
+
+        <div className="filter">
+            <div className="filter-result">
+                {filteredItems.length} Products
+            </div>
+            <div className='filter-sort' >
                 Order{" "}
                 <select
                     value={sort}
@@ -28,6 +32,7 @@ const Filter = () => {
                     <option value="highest">Highest</option>
                 </select>
             </div>
+
 
             <div className="filter-size">
                 Filter{" "}
