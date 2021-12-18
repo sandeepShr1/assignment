@@ -1,0 +1,32 @@
+/* Checkout form */
+
+$main-color : #c280c0;
+$text-color : #df01d7;
+
+.form-container {
+    display        : block;
+    text-align     : center;
+    padding        : 0;
+    list-style-type: none;
+
+
+    & .heading {
+        color: #df01d7;
+        padding  : 1rem;
+        font-size: 1.6em;
+        font-weight: 200;
+    }
+
+    & p {
+        color: #f5b3f3;
+    }
+}
+
+input {
+    padding: 1rem;
+    border : 0.1rem $text-color solid;
+
+    &::placeholder {
+        font-size: 1rem;
+    }
+}

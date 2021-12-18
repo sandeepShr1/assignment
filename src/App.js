@@ -9,8 +9,9 @@ import React, { useState } from "react";
 import Alert from './container/Alert';
 
 import { CartProvider } from 'react-use-cart';
-import ProductListing from "./components/Products";
+import Products from "./components/Products";
 import NotFound from './container/NotFound';
+import Checkout from "./components/checkout/Checkout";
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -30,6 +31,7 @@ function App() {
 
   return (
       <BrowserRouter>
+      <div className="overflow-hidden">
         <header>
           <Navbar />
           <Alert alert={alert} />
@@ -45,12 +47,14 @@ function App() {
             <div className="">
               <CartProvider >
                 <Routes>
-                  <Route exact path="/" element={<ProductListing setProgress={setProgress} showAlert={showAlert} />} />          <Route path='*' element={<NotFound />} />
+                  <Route exact path="/" element={<Products setProgress={setProgress} showAlert={showAlert} />} />          <Route path='*' element={<NotFound />} />
+                  <Route exact path="/checkout" element={<Checkout setProgress={setProgress} showAlert={showAlert} />} />          <Route path='*' element={<NotFound />} />
                 </Routes>
               </CartProvider>
             </div>
           </div>
         </main>
+        </div>
         <footer>ALL RIGHTS IS RESERVED.</footer>
       </BrowserRouter>
   );

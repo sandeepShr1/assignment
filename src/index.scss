@@ -1,83 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 $main-color          : #df01d7;
 $main-text-gray-color: #9b6262;
 $light-gray-color    : #995c5c;
 $main-black-color    : #20232a;
 $main-white-color    : #f0cccc;
-$place-holder-color  :#d888d6;
+$place-holder-color  :#d1a7cf;
 
 html {
-    font-size : 66.5%;
-    box-sizing: border-box;
+  font-size : 66.5%;
+  box-sizing: border-box;
 }
 
 body,
 #root {
-    height: 100vh;
-    margin: 0;
+  height: 100vh;
+}
+
+body,
+input,
+select,
+button,
+textarea {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+footer {
+  grid-area       : footer;
+  background-color: #203040;
+  color           : #ffffff;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  width           : 100%;
+  position        : relative;
+  bottom          : 0;
+  height          : 40px;
+  margin-top      : 200px;
 }
 
 
 /* Filter */
 .filter {
-    display: flex;
-    justify-content:space-evenly;
-    padding-bottom: 20px;
-    padding-left: 2rem;
-    margin: 1rem;
-    border-bottom: 0.1rem #c0c0c0 solid;
-  }
-  .filter div {
-    flex: 1;
-  }
+  display        : flex;
+  justify-content: space-evenly;
+  padding-bottom : 20px;
+  padding-left   : 2rem;
+  margin         : 1rem;
+  border-bottom  : 0.1rem #c0c0c0 solid;
+}
+
+.filter div {
+  flex: 1;
+}
 
 
 /* products */
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  }
-  .products li {
-    flex: 0 1 29rem;
-    height: 47rem;
-    padding: 1rem;
-  }
-  .product {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
-  #productImg {
-    max-width: 30rem;
-    max-height: 30rem;
-  }
-  .product-price {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .product-price div,
-  .product-price button {
-    text-align: center;
-    flex: 1;
-  }
-  .product-price div {
-    font-size: 2rem;
-  }
-  .button {
-    padding: 1rem;
-    border: 0.1rem #c0c0c0 solid;
-    background-color: #f0f0f0;
-    cursor: pointer;
-  }
-  .button:hover {
-    border: 0.1rem #808080 solid;
-  }
-  .button.primary {
-    background-color: #f0c040;
-  }
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: center;
+  align-items    : center;
+  padding        : 0;
+  margin         : 0;
+  list-style-type: none;
+}
+
+.products li {
+  flex   : 0 1 29rem;
+  height : 47rem;
+  padding: 1rem;
+}
+
+.product {
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+  height         : 100%;
+}
+
+#productImg {
+  max-width : 30rem;
+  max-height: 30rem;
+}
+
+.product-price {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+}
+
+.product-price div,
+.product-price button {
+  text-align: center;
+  flex      : 1;
+}
+
+.product-price div {
+  font-size: 2rem;
+}
+
+.button {
+  padding         : 1rem;
+  border          : 0.1rem #c0c0c0 solid;
+  background-color: $place-holder-color;
+  cursor          : pointer;
+}
+
+.button:hover {
+  border: 0.1rem $main-color  solid;
+}
+
+.button.primary {
+  background-color: #f0c040;
+}
