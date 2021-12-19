@@ -1,15 +1,33 @@
 import storeApi from '../../apis/storeApi';
 import { ActionTypes } from '../constants/actions_type';
 
-export const fetchProducts = () => async (dispatch) => {
-  const response = await storeApi.get('/api/v1/product');
-  let res = response.data.data.product;
-  dispatch({
-    type: ActionTypes.FETCH_PRODUCTS,
-    payload: res,
-  })
+const fetchProductStart = () => {
+  return {
+    type: ActionTypes.FETCH_PRODUCTS_START
+  };
 };
 
+export const fetchProducts = () => async (dispatch) => {
+  dispatch(fetchProductStart())
+  try {
+    const response = await storeApi.get('/api/v1/product');
+    let res = response.data.data.product;
+    dispatch({
+      type: ActionTypes.FETCH_PRODUCTS,
+      payload: res,
+    })
+
+  } catch (error) {
+    dispatch(fetchProductFailed(error.message))
+  }
+};
+
+export const fetchProductFailed = (error) => {
+  return {
+    type: ActionTypes.FETCH_PRODUCTS_FAILED,
+    payload: error
+  }
+};
 
 export const setProducts = (filteredItems) => {
   return {

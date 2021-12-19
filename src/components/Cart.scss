@@ -1,0 +1,83 @@
+$place-holder-color :#d1a7cf;
+$main-color         : #df01d7;
+
+.cart {
+  padding: .1rem;
+  margin : 1rem;
+  display: flex;
+}
+
+.cart-header {
+  border-bottom: 0.1rem #c0c0c0 solid;
+  padding-top: 20px;
+}
+
+.cart-items {
+  padding        : 0;
+  width          : 100%;
+  list-style-type: none;
+}
+
+.cart-items img {
+  width: 5rem;
+}
+
+.cart-items li {
+  display: flex;
+}
+
+.cart-items li div {
+  padding: 0.5rem;
+}
+
+.cart-items li div:last-child {
+  flex: 1;
+}
+
+
+
+.total {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+  width          : 100%;
+}
+
+.total>div {
+  font-size: 2rem;
+}
+
+.total>div,
+.total>button {
+  flex: 1;
+}
+
+
+.button-primary {
+  padding        : 1rem;
+  border         : 0.1rem #c0c0c0 solid;
+  cursor         : pointer;
+  text-decoration: none;
+  color          : #372727;
+  font-size      : 1rem;
+}
+
+.btn-inc-dec {
+  padding        : .3rem 1rem;
+  margin         : 1rem 1rem;
+  border         : 0.1rem #c0c0c0 solid;
+  cursor         : pointer;
+  text-decoration: none;
+  color          : #372727;
+  font-size      : 1rem;
+}
+
+.button-primary,
+.btn-inc-dec:hover {
+  border: 0.1rem $main-color solid;
+  color : $main-color;
+}
+
+.button.primary {
+  background-color: #f0c040;
+}

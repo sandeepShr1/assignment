@@ -4,12 +4,27 @@ const initialState = {
     filteredItems: [],
     sort: "",
     category: "",
-    items:[]
+    items: [],
+    loading: false,
+    error: null
 }
 export const productReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case ActionTypes.FETCH_PRODUCT_START:
+            return {
+                ...state,
+                loading: true
+            };
         case ActionTypes.SET_PRODUCTS:
-            return { ...state, filteredItems: payload };
+            return { ...state, filteredItems: payload, loading:false };
+
+        case ActionTypes.FETCH_PRODUCTS_FAILED:
+            return {
+                ...state,
+                loading: false,
+                error: payload
+
+            };
 
         case ActionTypes.ORDER_PRODUCTS_BY_PRICE:
             return {

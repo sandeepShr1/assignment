@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import Alert from './container/Alert';
 
 import { CartProvider } from 'react-use-cart';
-import Products from "./components/Products";
+import Products from "./components/Products/Products";
 import NotFound from './container/NotFound';
 import Checkout from "./components/checkout/Checkout";
 
@@ -30,8 +30,8 @@ function App() {
 
 
   return (
-      <BrowserRouter>
-      <div className="overflow-hidden">
+    <BrowserRouter>
+      <div className="overflow-hidden " id = "grid-container">
         <header>
           <Navbar />
           <Alert alert={alert} />
@@ -43,20 +43,17 @@ function App() {
           />
         </header>
         <main>
-          <div className="">
-            <div className="">
-              <CartProvider >
-                <Routes>
-                  <Route exact path="/" element={<Products setProgress={setProgress} showAlert={showAlert} />} />          <Route path='*' element={<NotFound />} />
-                  <Route exact path="/checkout" element={<Checkout setProgress={setProgress} showAlert={showAlert} />} />          <Route path='*' element={<NotFound />} />
-                </Routes>
-              </CartProvider>
-            </div>
-          </div>
+          <CartProvider >
+            <Routes>
+              <Route exact path="/" element={<Products setProgress={setProgress} showAlert={showAlert} />} />          <Route path='*' element={<NotFound />} />
+              <Route exact path="/checkout" element={<Checkout setProgress={setProgress} showAlert={showAlert} />} />          <Route path='*' element={<NotFound />} />
+            </Routes>
+          </CartProvider>
+
         </main>
-        </div>
         <footer>ALL RIGHTS IS RESERVED.</footer>
-      </BrowserRouter>
+      </div>
+    </BrowserRouter>
   );
 }
 
